@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@ruiapp/rapid-core':
-        specifier: ^0.10.10
-        version: 0.10.10(nodemailer@6.9.16)(winston@3.17.0)
+        specifier: ~0.12.1
+        version: 0.12.1(nodemailer@6.9.16)(winston@3.17.0)
       axios:
         specifier: ^1.7.9
         version: 1.7.9
@@ -74,8 +74,8 @@ packages:
     resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
     engines: {node: '>= 8.0.0'}
 
-  '@ruiapp/rapid-core@0.10.10':
-    resolution: {integrity: sha512-UsFwL3EA5eI5EGtsSF6NXkMxHc1za/lmcG3mO4ecp3QmMkJi8LT2cDGLW8USRrCAd7QQENHOzoOrjJivD1RN/w==}
+  '@ruiapp/rapid-core@0.12.1':
+    resolution: {integrity: sha512-to0WiI53gCT8KgccDAENsS3RkFwKDGxyE4UkSJSGWES/FYz3/xW4Uy+tpJaew3/kyiogYjUDHSXSyR2a/UDz/g==}
     peerDependencies:
       nodemailer: ^6.9.15
       winston: ^3.11.0
@@ -707,7 +707,7 @@ snapshots:
       estree-walker: 2.0.2
       picomatch: 2.3.1
 
-  '@ruiapp/rapid-core@0.10.10(nodemailer@6.9.16)(winston@3.17.0)':
+  '@ruiapp/rapid-core@0.12.1(nodemailer@6.9.16)(winston@3.17.0)':
     dependencies:
       bcryptjs: 3.0.2
       cron: 3.3.1

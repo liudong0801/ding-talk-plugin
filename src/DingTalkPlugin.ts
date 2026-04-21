@@ -2,13 +2,14 @@
  * DingTalk plugin
  */
 
-import type {
-  IRpdServer,
-  RapidPlugin,
-  RpdApplicationConfig,
-  RpdConfigurationItemOptions,
-  RpdServerPluginConfigurableTargetOptions,
-  RpdServerPluginExtendingAbilities,
+import {
+  RouteContext,
+  type IRpdServer,
+  type RapidPlugin,
+  type RpdApplicationConfig,
+  type RpdConfigurationItemOptions,
+  type RpdServerPluginConfigurableTargetOptions,
+  type RpdServerPluginExtendingAbilities,
 } from "@ruiapp/rapid-core";
 import pluginActionHandlers from "./actionHandlers";
 import pluginModels from "./models";
@@ -67,8 +68,9 @@ class DingTalkPlugin implements RapidPlugin {
   }
 
   async onApplicationLoaded(server: IRpdServer, applicationConfig: RpdApplicationConfig) {
+    const routeContext = RouteContext.newSystemOperationContext(server);
     const settingService = server.getService<SettingService>("settingService");
-    const settingValues = await settingService.getSystemSettingValues("dingTalk");
+    const settingValues = await settingService.getSystemSettingValues(routeContext, "dingTalk");
     const apiConfig = pick(settingValues, ["corpId", "agentId", "appKey", "appSecret"]);
     this.#dingTalkService.initService(apiConfig);
   }
